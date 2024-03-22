@@ -7,7 +7,7 @@ class HelloWorld {
       int valorInteiro = numAleatorio.Next(1,100);
       Console.WriteLine("=== Desafio da Adivinhação ===");
       Console.WriteLine("Para vencer esse jogo você precisa adivinhar o número inteiro gerado entre 1 a 100.");
-      while (true){
+      do {
           Console.WriteLine("Digite a sua tentativa de um número entre 1 a 100: ");
           int chute = Convert.ToInt32(Console.ReadLine());
           if (chute<1 || chute>100){
@@ -24,6 +24,6 @@ class HelloWorld {
           Console.WriteLine("Parabéns! Você acertou o número gerado!");
           break;
       }
-      }
+      } while (true);
       }
   }
