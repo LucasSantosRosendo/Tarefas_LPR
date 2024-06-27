@@ -1,36 +1,37 @@
 using System.Collections.Generic;
 using System;
+
 class HelloWorld {
-  static void Main() {
-       List<string> nomes = new List<string>();
-       Console.WriteLine("Digite o valor de nomes que você deseja digitar: ");
-       int quantidade = int.Parse(Console.ReadLine());
-       
-       for (int i = 0; i < quantidade; i++)
-       {
-           string nome = Console.ReadLine();
-           nomes.Add(nome);
-          
-       }
-       
-       List<string> ordem[] = new List<string>[100];
-       
-       for (int i = 0; < ordem.Length; i++)
-       {
-           ordem[i] = new List<string>();
-       }
-       
-       
-      foreach (var nome in nomes)
-      {
-          int tamanho = nome.Length;
-          ordem[length].Add(nome); 
-      }
-      
-      for (int i = 0; i < ordem.Length; i++)
-      {
-          Console.WriteLine()
-      }
-      
-}
+    static void Main() {
+        List<string> nomes = new List<string>();
+        Console.WriteLine("Digite o número de nomes que você deseja digitar: ");
+        int quantidade = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < quantidade; i++) {
+            Console.WriteLine($"Digite o nome {i + 1}:");
+            string nome = Console.ReadLine();
+            nomes.Add(nome);
+        }
+
+        List<List<string>> ordem = new List<List<string>>(100);
+
+        for (int i = 0; i < 100; i++) {
+            ordem.Add(new List<string>());
+        }
+
+        foreach (var nome in nomes) {
+            int tamanho = nome.Length;
+            if (tamanho < 100) {
+                ordem[tamanho].Add(nome);
+            }
+        }
+
+        for (int i = 0; i < ordem.Count; i++) {
+            if (ordem[i].Count > 0) {
+                foreach (var nome in ordem[i]) {
+                    Console.WriteLine(nome);
+                }
+            }
+        }
+    }
 }
