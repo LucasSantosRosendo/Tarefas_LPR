@@ -16,14 +16,13 @@ int main ()
 	  cout << num << endl;
 	}
 	
-	for (auto it = numeros.begin (); it != numeros.end (); it++)
+	auto it = numeros.begin();
+	while (it != numeros.end())
 	{
-	    if (*it%2 == 0)
+	    if (*it % 2 == 0)
 	    {
 	        it = numeros.erase(it);
-	        break;
 	    }
-	    
 	    else 
 	    {
 	        it++;
