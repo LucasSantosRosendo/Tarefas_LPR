@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: black;
+  font-family: "Arial", sans-serif;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00ffff; /* Cor inicial do texto */
+  font-size: 5rem;
+  text-align: center;
+  opacity: 0;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  animation: fadeIn 3s ease-out forwards;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.plus-button {
+  position: absolute;
+  bottom: 20px; /* Posição do botão "+" */
+  right: 20px; /* Posição do botão "+" */
+  width: 50px; /* Tamanho do botão */
+  height: 50px; /* Tamanho do botão */
+  font-size: 30px; /* Tamanho da fonte do "+" */
+  background-color: #00ffff; /* Cor do botão */
+  color: black; /* Cor do texto */
+  border: none;
+  border-radius: 50%; /* Faz o botão ser redondo */
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.plus-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
